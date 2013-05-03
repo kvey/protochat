@@ -1,0 +1,40 @@
+<div class="">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a href="" class="brand">ProtoChat</a>
+      <ul class="nav">
+          <form action="" ng-submit="goToConversation(convoName)" class="navbar-form pull-left">
+            <input type="text" ng-model="convoName" placeholder="Conversation Name"/>
+            <input type="submit" value="Go To" class="btn"/>
+          </form>
+      </ul>
+    </div>
+  </div>
+  <div ng-include="'/views/user.html'"></div>
+  <form action="" ng-submit="setUsername(username)" class="form-inline">
+    <input type="text" ng-model="username" placeholder="Your Name"/>
+  </form>
+  <ul>
+    <li ng-repeat="activeUser in activeUsers" >
+      {{activeUser.name}}
+    </li>
+  </ul>
+  <ul class="divlist user-conversations" id="conversations">
+    <li ng-repeat="convoSub in convoOutbound">
+      <div convo-child="test" convo-title="convoSub" convo-inbound="convoTitle"> </div>
+    </li>
+    <li>
+      <div class="primary-conversation row-fluid">
+        <ul class="divlist">
+          <li ng-repeat="convoMessage in convoMessages">
+          {{convoMessage.fromUser}} in <a href="/#/{{convoMessage.fromConvo}}">{{convoMessage.fromConvo}}</a>: {{convoMessage.body}}
+          </li>
+        </ul>
+        <form action="" ng-submit="broadcastMessage()" class="form-inline">
+          <input type="text" ng-model="msgBroadcast" placeholder="message" class="span10"/>
+          <input type="submit" value="Send" class="btn span2"/>
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>

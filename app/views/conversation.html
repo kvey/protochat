@@ -1,0 +1,20 @@
+<div class="user-conversation span12">
+  <a href="/#/{{convoTitle}}"> <h2>{{convoTitle}}</h2> </a>
+  <a href="/#/{{convoInbound}}">{{convoInbound}}</a>
+  <p>Outbound Conversations</p>
+  <ul>
+    <li ng-repeat="convoSub in convoOutbound" class="user-conversation-outbound">
+      <a href="/#/{{convoSub}}">{{convoSub}}</a>
+    </li>
+  </ul>
+  <p>Referencing Conversations</p>
+  <ul class="divlist user-conversation-block">
+    <li ng-repeat="convoMessage in convoMessages" class="user-conversation-message">
+      {{convoMessage.fromUser}} in <a href="/#/{{convoMessage.fromConvo}}">{{convoMessage.fromConvo}}</a>: {{convoMessage.body}}
+    </li>
+  </ul>
+  <form action="" ng-submit="sendMessage()" class="form-inline">
+    <input type="text" ng-model="outMessage" placeholder="message" class="span11"/>
+    <input type="submit" value="Send" class="btn" class="span1"/>
+  </form>
+</div>

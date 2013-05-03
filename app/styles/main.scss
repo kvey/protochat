@@ -1,0 +1,49 @@
+@import "compass_twitter_bootstrap";
+
+.divlist, .divlist > li{
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.primary-conversation{
+    max-height: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #FFF;
+    width: 100%;
+    border: 1px solid #EEE;
+    box-sizing: border-box;
+}
+
+.user-conversation{
+    float: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #FFF;
+    width: 500px;
+    border: 1px solid #EEE;
+    box-sizing: border-box;
+}
+
+.user-conversation form{
+    margin-bottom: 0px;
+}
+
+.user-conversation input[type=text]{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.user-conversation-block{
+    max-height: 150px;
+    overflow-y: scroll;
+    border: 1px solid #EEE;
+}
+
+input{
+    border-radius: 0px!important;
+    margin-bottom: 0px!important;
+}
